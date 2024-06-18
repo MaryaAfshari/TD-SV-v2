@@ -9,7 +9,7 @@ import torch.nn.functional as F
 import zipfile
 import pickle
 from tools import *
-from dataLoader2Ver2 import enroll_loader, train_loader, test_loader
+from dataLoader2Ver3 import enroll_loader, train_loader, test_loader
 from trainECAPAModel2Mine2Ver3 import ECAPAModel
 import numpy as np
 
