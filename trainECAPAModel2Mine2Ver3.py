@@ -10,7 +10,7 @@ import zipfile
 import pickle
 from tools import *
 from dataLoader2Ver3 import enroll_loader, train_loader, test_loader
-from trainECAPAModel2Mine2Ver3 import ECAPAModel
+from ECAPAModel2Mine2Ver3 import ECAPAModel
 import numpy as np
 
 parser = argparse.ArgumentParser(description="ECAPA_trainer")
