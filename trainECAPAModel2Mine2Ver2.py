@@ -63,14 +63,14 @@ trainLoader = torch.utils.data.DataLoader(trainloader, batch_size=args.batch_siz
 # Enroll data loader
 enrollloader = enroll_test_loader(file_list=args.enroll_list, data_path=args.enroll_path, num_frames=args.num_frames)
 #enrollloader = enroll_test_loader(**vars(args))
-enrollloader = enroll_test_loader(file_list=args.enroll_list, data_path=args.enroll_path, num_frames=args.num_frames)
-#enrollLoader = torch.utils.data.DataLoader(enrollloader, batch_size=1, shuffle=False, num_workers=args.n_cpu, drop_last=False)
+#enrollloader = enroll_test_loader(file_list=args.enroll_list, data_path=args.enroll_path, num_frames=args.num_frames)
+enrollLoader = torch.utils.data.DataLoader(enrollloader, batch_size=4, shuffle=False, num_workers=args.n_cpu, drop_last=False)
 
 # Test data loader
 #testloader = enroll_test_loader(file_list=args.eval_list, data_path=args.eval_path, num_frames=args.num_frames)
 #testloader = enroll_test_loader(**vars(args))
 testloader = enroll_test_loader(file_list=args.eval_list, data_path=args.eval_path, num_frames=args.num_frames)
-testLoader = torch.utils.data.DataLoader(testloader, batch_size=1, shuffle=False, num_workers=args.n_cpu, drop_last=False)
+testLoader = torch.utils.data.DataLoader(testloader, batch_size=4, shuffle=False, num_workers=args.n_cpu, drop_last=False)
 
 
 # Search for the exist models
