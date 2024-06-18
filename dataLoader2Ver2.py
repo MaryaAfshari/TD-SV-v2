@@ -110,6 +110,7 @@ class enroll_test_loader(object):
     def __init__(self, file_list, data_path, num_frames, **kwargs):
         self.data_path = data_path
         self.num_frames = num_frames
+        self.file_list = file_list
 
         # Load data & labels
         self.data_list = []

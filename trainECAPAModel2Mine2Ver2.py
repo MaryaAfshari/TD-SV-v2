@@ -62,12 +62,14 @@ trainLoader = torch.utils.data.DataLoader(trainloader, batch_size=args.batch_siz
 
 # Enroll data loader
 enrollloader = enroll_test_loader(file_list=args.enroll_list, data_path=args.enroll_path, num_frames=args.num_frames)
-enrollloader = enroll_test_loader(**vars(args))
+#enrollloader = enroll_test_loader(**vars(args))
+enrollloader = enroll_test_loader(file_list=args.enroll_list, data_path=args.enroll_path, num_frames=args.num_frames)
 #enrollLoader = torch.utils.data.DataLoader(enrollloader, batch_size=1, shuffle=False, num_workers=args.n_cpu, drop_last=False)
 
 # Test data loader
 #testloader = enroll_test_loader(file_list=args.eval_list, data_path=args.eval_path, num_frames=args.num_frames)
-testloader = enroll_test_loader(**vars(args))
+#testloader = enroll_test_loader(**vars(args))
+testloader = enroll_test_loader(file_list=args.eval_list, data_path=args.eval_path, num_frames=args.num_frames)
 testLoader = torch.utils.data.DataLoader(testloader, batch_size=1, shuffle=False, num_workers=args.n_cpu, drop_last=False)
 
 
@@ -97,9 +99,9 @@ score_file = open(os.path.join(args.save_path, "score.txt"), "a+")
 
 while(1):
     # Training for one epoch
-    if epoch > 2: # I should change it later if I want to train from the base ........5.6.5024
+    if epoch > 3: # I should change it later if I want to train from the base ........5.6.5024
         loss, lr, acc = s.train_network(epoch=epoch, loader=trainLoader)
-        
+
     # Enrollment and Testing every [test_step] epochs
     if epoch % args.test_step == 0:
         s.save_parameters(args.save_path + "/model_%04d.model" % epoch)
