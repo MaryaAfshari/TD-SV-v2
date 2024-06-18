@@ -10,7 +10,7 @@ import zipfile
 import pickle
 from tools import *
 from dataLoader2Ver2 import enroll_test_loader, train_loader
-from trainECAPAModel2Mine2Ver2 import ECAPAModel
+from ECAPAModel2Mine2Ver2 import ECAPAModel
 #from ECAPAModel2Mine4 import ECAPAModel
 import numpy as np
 
